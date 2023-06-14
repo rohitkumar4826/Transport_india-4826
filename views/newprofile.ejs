@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Document</title>
+    <style>
+        form {
+            margin: 0 auto;
+            width: 80%;
+            font-size: 16px;
+          }
+          
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+          }
+          
+          td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+          }
+          
+          input[type="text"],
+          input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+          
+          input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          
+          input[type="submit"]:hover {
+            background-color: #45a049;
+          }
+          </style>
+          
+</head>
+<body>
+    <form action="/update" method="post" >
+		<div class="span6" style="float:left;width:80%;">
+			<table class="table">
+				<tr>
+					<td>First Name</td>
+					<td style="text-transform:capitalize;"><input name="fn" type="text" value="" aria-label="new"></td>
+				</tr>
+				<tr>
+					<td>Last name</td>
+					<td><input name="ln" type="text" value="" aria-label="new"></td>
+				</tr>
+				<tr>
+					<td>E-Mail</td>
+					<td><input name="mail1" type="mail" value="" aria-label="new"></td>
+				</tr>
+				<tr>
+					<td>Dob</td>
+					<td><input name="dob1" type="text" value="" aria-label="new"></td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td><input name="gnd1" type="text" value="" aria-label="new"></td>
+				</tr>
+				<tr>
+					<td>Marital Status</td>
+					<td><input name="mrt1" type="text" value="" aria-label="new"></td>
+				</tr>
+				<tr>
+					<td>Mobile No.</td>
+					<td><input name="mon1" type="text" value="" aria-label="new"></td>
+				</tr>
+				<tr>
+					<td>Security Question</td>
+					<td><input name="que1" type="text" value="" aria-label="new"></td>
+				</tr>
+				<tr>
+					<td>Answer</td>
+					<td><input name="ans1" type="text" value="" aria-label="new"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Save Profile" class="btn btn-info" aria-label="new"></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Find Train </title>
+	<link rel="shortcut icon" href="images/favicon.png"></link>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	</link>
+	<link href="css/Default.css" rel="stylesheet">
+	</link>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script>
+		$(document).ready(function()
+		{
+			var x=(($(window).width())-1024)/2;
+			$('.wrap').css("left",x+"px");
+		});
+
+	</script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/man.js"></script>
+	
+</head>
+<body style="background-image: url(images/backg.jpg);">
+	<div class="wrap">
+		<!-- Header -->
+		<div class="header">
+			<div style="float:left;width:150px;">
+				<img src="images/logo1.png"  alt=""/>
+			</div>		
+			<div>
+			<div style="float:right; font-size:20px;margin-top:20px;">
+			
+			</div>
+			<div id="heading">
+				<a href="/index" style="color:orangered">Indian Transport</a>
+			</div>
+			</div>
+		</div>
+		<div class="navbar navbar-inverse" >
+			<div class="navbar-inner">
+				<div class="container" >
+				<a class="brand" href="/index" >HOME</a>
+				<a class="brand" href="/train" >FIND TRAIN</a>
+				<a class="brand" href="/reservation">RESERVATION</a>
+				<a class="brand" href="/profile">PROFILE</a>
+				<a class="brand" href="/display">BOOKING HISTORY</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="span12 well" id="boxh">
+		
+			<form style="margin:0px;" method="post" >
+			<table class="table" style="margin-bottom:0px;">
+				<tr>
+					<th style="border-top:0px;"><label><b>Search Train</label></th>
+					<td style="border-top:0px;">
+						<select id="myselect" onchange="clicker()" aria-label="new">
+						<option value="plf">By Station</option>
+						<option value="name" >By Name</option>
+						<option value="num" >By Number</option>
+						</select>
+					</td>
+					<td id="mbox" style="border-top:0px;"> <label>From </label></td>
+					<td style="border-top:0px;"><input  type="text" class="input-block-level" name="byname" id="byn" aria-label="new"></td>
+					<td id="xbox" style="border-top:0px;"><label> To </label></td>
+					<td style="border-top:0px;"><input id="xbox1" type="text" class="input-block-level" name="bynum" aria-label="new"></td>
+					<td style="border-top:0px;"><input class="btn btn-info" type="submit" value="Find" aria-label="new"> </td>
+					<td style="border-top:0px;"><a href="train.html" class="btn btn-info" type="reset" value="Reset">Reset</a></td>
+				</tr>
+			</table>
+			</form>
+		</div>
+<!-- display result -->
+		<div class="span12 well">
+			<div class="display" style="height:30px;">
+				<table class="table" border="5px">
+				<tr>
+					<th style="width:70px;border-top:0px;"> Train No.</th>
+					<th style="width:210px;border-top:0px;"> Train Name </th>
+					<th style="width:65px;border-top:0px;"> Orig. </th>
+					<th style="width:55px;border-top:0px;"> Des. </th>
+					<th style="width:60px;border-top:0px;"> Arr. </th>
+					<th style="width:65px;border-top:0px;"> Dep. </th>
+					<th style="width:20px;border-top:0px;"> M </th>
+					<th style="width:25px;border-top:0px;"> T </th>
+					<th style="width:29px;border-top:0px;"> W </th>
+					<th style="width:25px;border-top:0px;"> T </th>
+					<th style="width:25px;border-top:0px;"> F </th>
+					<th style="width:25px;border-top:0px;"> S </th>
+					<th style="border-top:0px;"><font color=red> S </font></th>
+				</tr>
+				</table>
+			</div>
+			<div class="display" style="margin-top:0px;overflow:auto;">
+				<table class="table" >
+				
+				<tr class="text-error">
+				    <td style="width:70px;">Number </td>
+					<td style="width:210px;">Name</td>
+					<td style="width:65px;">Ori</td>
+					<td style="width:55px;">Dest</td>
+					<td style="width:60px;">Arri.</td>
+					<td style="width:65px;">Arri.</td>
+					<td style="width:20p;">Mon</td>
+					<td style="width:25px;">Tue</td>
+					<td style="width:29px;">Wen</td>
+					<td style="width:25px;">Thu</td>
+					<td style="width:25px;">Fri</td>
+					<td style="width:25px;">Sat</td> 	
+					<td> Sun</td>
+				</tr>
+			
+				<tr class="text-info">
+					<td style="width:70px;">Number </td>
+					<td style="width:210px;">Name</td>
+					<td style="width:65px;">Ori</td>
+					<td style="width:55px;">Dest</td>
+					<td style="width:60px;">Arri.</td>
+					<td style="width:65px;">Arri.</td>
+					<td style="width:20p;">Mon</td>
+					<td style="width:25px;">Tue</td>
+					<td style="width:29px;">Wen</td>
+					<td style="width:25px;">Thu</td>
+					<td style="width:25px;">Fri</td>
+					<td style="width:25px;">Sat</td> 	
+					<td> Sun</td>				
+				</tr>
+				
+				<tr class="text-error">
+					<td style="width:70px;"> Number </td>
+					<td style="width:210px;"> Name </td>
+					<td style="width:65px;"> Ori </td>
+					<td style="width:60px;"> Dest </td>
+					<td style="width:70px;">  </td>
+					<td style="width:55px;">  </td>
+					<td style="width:20p;"> Mon </td>
+					<td style="width:25px;"> Tue </td>
+					<td style="width:29px;"> Wen </td>
+					<td style="width:25px;"> Thu </td>
+					<td style="width:25px;"> Fri </td>
+					<td style="width:25px;"> Sat </td>
+					<td> Sun</td>	
+				</tr>
+				
+				<tr class="text-info">
+				<td style="width:80px;"> Number </td>
+					<td style="width:210px;"> Name </td>
+					<td style="width:65px;"> Origin </td>
+					<td style="width:55px;"> Destination </td>
+					<td style="width:70px;"> Arrival </td>
+					<td style="width:55px;"> Departure </td>
+					<td style="width:20p;"> Mon </td>
+					<td style="width:25px;"> Tue </td>
+					<td style="width:29px;"> Wen </td>
+					<td style="width:25px;"> Thu </td>
+					<td style="width:25px;"> Fri </td>
+					<td style="width:25px;"> Sat </td>
+					<td> Sun</td>			
+				</tr>
+				
+				</table>
+			</div>
+		</div>
+		
+		<footer >
+		<div style="width:100%;">
+			<div style="float:left;">
+			<p class="text-right text-info">  &copy;all copyright reserved</p>	
+			</div>
+		</div>
+		</footer>	
+	</div>
+</body>
+</html>
